@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black; /* Fondo negro para la transición */
+}
+
+.transition-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.transition-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 48px;
+    color: white;
+    animation: fadeInOut 5s infinite; /* Animación de entrada/salida */
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(100px); }
+    25% { opacity: 1; transform: translateY(0); }
+    75% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-100px); }
+}
