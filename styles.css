@@ -1,27 +1,14 @@
-body {
-    margin: 0;
-    overflow: hidden;
-    background-color: black; /* Fondo negro para la transición */
+let countdownNumber = 3; // Comienza en 3 segundos
+const countdownElement = document.getElementById('countdown');
+
+function updateCountdown() {
+    countdownElement.textContent = countdownNumber;
+    if (countdownNumber > 0) {
+        countdownNumber--;
+        setTimeout(updateCountdown, 1000); // Actualiza cada segundo
+    } else {
+        countdownElement.textContent = "¡Ya!";
+    }
 }
 
-.transition-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
-
-.transition-text {
-    font-family: 'Arial', sans-serif;
-    font-size: 48px;
-    color: white;
-    animation: fadeInOut 5s infinite; /* Animación de entrada/salida */
-}
-
-@keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(100px); }
-    25% { opacity: 1; transform: translateY(0); }
-    75% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-100px); }
-}
+updateCountdown(); // Inicia la cuenta regresiva
